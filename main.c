@@ -23,6 +23,9 @@ int main() {
 	int i = 0;
 	for (auto value : words)
 		fprintf(f, "%d\t%s\t%d\n", ++i, value.first.c_str(), countWords.getCountWord(value.first));
+	
+	for (auto [key, value] : countWords.getMinCountWord())
+		std::cout << key << "\t" << value << std::endl;
 
 	fclose(f);
 

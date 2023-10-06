@@ -8,29 +8,23 @@ void ParseText::openFile(const std::string& fileName) {
 
 void ParseText::parseFile() {
 	char buf[1024];
-	const char signes[] = ".!?,;:-()[]{}@#$%^&*+_=|/<>№~`";
-	int count = fscanf(f, "%s ", buf);
+	int count = fread(buf, 1, 1024, f);
+	std::string bufStr = buf;
+	std::string word = "";
 
-	while(count > 0){
-		std::string word = buf;
-
-		for (auto v : words){
-			for (int i = sizeof(signes)-1; i != -1; i--){
-				if (word == "")
-					break;
-				if (word.back() == signes[i] | word.back() == '"'){
-					word.pop_back();
-				}
-			}
+	for (auto value : bufStr){
+		if (65 <= value && value <= 90){
+			value += 32;
 		}
-
+		if (97 <= value && value <= 122){
+			word += value;
+			continue;
+		}
 		if (word != ""){
-			std::transform(word.begin(), word.end(), word.begin(), tolower);
-			words.push_back(word);	
+               		words.push_back(word);
+			word = "";
 		}
-		count = fscanf(f, "%s ", buf);
-	}
-	
+	}	
 }
 
 void ParseText::closeFile() {

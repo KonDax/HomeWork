@@ -1,5 +1,6 @@
 #include "count_words.h"
 
+const int maxCountWords = 5;
 CountWords::CountWords(){};
 CountWords::~CountWords(){};
 int CountWords::getCountWord(const std::string& word) const {
@@ -30,7 +31,7 @@ const std::list<std::pair<std::string, int>> CountWords::getMaxCountWord() const
 				break;
 			}
 		}
-		if (list.size() > 10)
+		if (list.size() > maxCountWords)
 			list.pop_back();
 	}
 	return list;
@@ -54,8 +55,8 @@ const std::list<std::pair<std::string, int>> CountWords::getMinCountWord() const
 				break;
 			}
 		}
-		if (list.size() > 10)
-			list.pop_front();
+		if (list.size() > maxCountWords)
+			list.pop_back();
 	}
 	return list;
 } // возвращает список слов, которые встретились реже других не более 10 слов
