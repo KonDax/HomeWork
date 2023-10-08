@@ -55,7 +55,7 @@ const std::pair<std::string, bool> ParseText::getNextWord() const {
 			return {v, false};
 		}
 	}
-	return {"В файле ничего нет", true};
+	return {"", true};
 };
 
 const std::string ParseText::getWordAt(int index) const {

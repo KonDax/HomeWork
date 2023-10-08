@@ -1,6 +1,6 @@
 #include "count_words.h"
 
-const int maxCountWords = 5;
+const int maxCountWords = 10;
 CountWords::CountWords(){};
 CountWords::~CountWords(){};
 int CountWords::getCountWord(const std::string& word) const {
