@@ -46,12 +46,12 @@ ParseText::ParseText(const std::string& fileName, unsigned long long int maxWord
 };
 
 const std::pair<std::string, bool> ParseText::getNextWord() const {
+	currentWord++;
 	int i = 0;
 	for (std::string v : words){
 		if (i == words.size()-1)
 			return {v, true};
 		if (i++ == currentWord){
-			currentWord++;
 			return {v, false};
 		}
 	}

@@ -12,8 +12,7 @@ int main() {
 	std::list<std::pair<std::string, bool>> words;
 	FILE* f = fopen("result.txt", "w");
 
-	parseText.getFirstWord();
-	words.push_back(parseText.getNextWord());
+	words.push_back({parseText.getFirstWord(), false});
 	while (!words.back().second){
 		countWords.addWord(words.back().first);
 		words.push_back(parseText.getNextWord());

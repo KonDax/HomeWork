@@ -20,7 +20,7 @@ class ParseText {
 		ParseText(const std::string& fileName);
 		ParseText(const std::string& fileName, unsigned long long int maxWords);
 		~ParseText() { };
-		const std::string& getFirstWord() const {currentWord = 0;  return words.front();};
+		const std::string& getFirstWord() const {currentWord = 0; return words.front();};
 		const std::pair<std::string, bool> getNextWord() const;
 		const std::string getWordAt(int index) const;
 };
