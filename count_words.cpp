@@ -4,7 +4,7 @@ const int maxCountWords = 10;
 CountWords::CountWords(){};
 CountWords::~CountWords(){};
 int CountWords::getCountWord(const std::string& word) const {
-	if (countWords.count(word) > 0)
+	if (countWords.count(word) == 0)
 		return 0;
 	return countWords.at(word);
 }

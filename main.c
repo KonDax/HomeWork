@@ -8,7 +8,8 @@ int main() {
 
 	const ParseText parseText("test.txt");
 	CountWords countWords;
-
+	std::cout << countWords.getCountWord("") << std::endl;
+/*
 	std::list<std::pair<std::string, bool>> words;
 	FILE* f = fopen("result.txt", "w");
 
@@ -27,7 +28,7 @@ int main() {
 		std::cout << key << "\t" << value << std::endl;
 
 	fclose(f);
-
+*/
 	return 0;
 }
 
