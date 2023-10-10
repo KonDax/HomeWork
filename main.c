@@ -8,8 +8,7 @@ int main() {
 
 	const ParseText parseText("test.txt");
 	CountWords countWords;
-	std::cout << countWords.getCountWord("") << std::endl;
-/*
+
 	std::list<std::pair<std::string, bool>> words;
 	FILE* f = fopen("result.txt", "w");
 
@@ -24,11 +23,11 @@ int main() {
 	for (auto value : words)
 		fprintf(f, "%d\t%s\t%d\n", ++i, value.first.c_str(), countWords.getCountWord(value.first));
 	
-	for (auto [key, value] : countWords.getMinCountWord())
+	for (auto [key, value] : countWords.getMaxCountWord())
 		std::cout << key << "\t" << value << std::endl;
 
 	fclose(f);
-*/
+
 	return 0;
 }
 
