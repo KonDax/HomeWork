@@ -13,9 +13,6 @@ void ParseText::parseFile() {
 	std::string word = "";
 
 	for (auto value : bufStr){
-		if (65 <= value && value <= 90){
-			value += 32;
-		}
 		if (97 <= value && value <= 122){
 			word += value;
 			continue;
