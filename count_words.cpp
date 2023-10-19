@@ -5,7 +5,7 @@ CountWords::CountWords(){};
 CountWords::~CountWords(){};
 
 int CountWords::insertWordsPair(const std::pair<std::string, std::string>& pair_word){
-	if (pair_word.first == pair_word.second | pair_word.first.back() | pair_word.first.back() > 122 | pair_word.first.back() > 65 | pair_word.first.back() > 90)
+	if (pair_word.first == pair_word.second | pair_word.first.back() | (not(97 <= pair_word.first.back() && pair_word.first.back() <= 120) && not(65 <= pair_word.first.back() && pair_word.first.back() <= 90)))
 		return countWordsPairs.count(pair_word);
 	countWordsPairs[pair_word]++;
 	return countWordsPairs.count(pair_word);
