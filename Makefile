@@ -1,14 +1,14 @@
-all : main.o count_words.o parse_text.o
-	g++ -g main.c count_words.cpp parse_text.cpp
+all : main.o task1.o test.o
+	g++ -g main.o task1.o test.o
 
-main.o : main.c
-	g++ -c -g main.c
+task1.o : task1.cpp
+	g++ -c -g task1.cpp
 
-count_words.o : count_words.cpp
-	g++ -c -g count_words.cpp
+main.o : main.cpp
+	g++ -c -g main.cpp
 
-parse_text.o : parse_text.cpp
-	g++ -c -g parse_text.cpp
+test.o : test.cpp
+	g++ -c -g test.cpp
 
 clean :
-	rm -rf *.o *.swp
+	rm -rf *.o *.*~
