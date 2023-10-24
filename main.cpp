@@ -1,7 +1,4 @@
 #include <iostream>
-#include "task1.h"
-#include "task2.h"
-#include "test.h"
 
 int main(){
 	/*
@@ -10,9 +7,6 @@ int main(){
 	 *
 	 * cat_ всё равно создаётся в момент Cat cat_, но теперь подставляется catName
 	 */
-	#ifdef TEST_RATIONAL_ADD
-		RUN_TEST(test_RationalAdd);
-	#endif
 
 	return 0;
 }
